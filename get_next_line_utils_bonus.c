@@ -6,7 +6,7 @@
 /*   By: sookim <sookim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 15:01:17 by sookim            #+#    #+#             */
-/*   Updated: 2020/07/07 16:50:09 by sookim           ###   ########.fr       */
+/*   Updated: 2020/07/07 17:19:31 by sookim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ size_t      ft_strlcat(char *dst, const char *src, size_t size)
     i = 0;
     dst_len = ft_strlen(dst);
     src_len = ft_strlen(src);
-    while (src[i] != '\0' && i < size - 1 - dst_len)
+    while (src[i] != '\0' && i < (size - 1) - dst_len)
     {
         dst[dst_len + i] = src[i];
         i++;
@@ -62,12 +62,12 @@ char    *ft_strjoin(char *s1, char *s2)
     size_t  s1_len;
     size_t  s2_len;
 
-    if (!s1 && !s2)
+    if (!(s1) && !(s2))
         return (NULL);
     if (!s1)
-        return ((char *)s2);
+        return (ft_strdup(s2));
     if (!s2)
-        return ((char *)s1);
+        return (ft_strdup(s1));
     s1_len = ft_strlen(s1);
     s2_len = ft_strlen(s2);
     if (!(ptr = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1))));
