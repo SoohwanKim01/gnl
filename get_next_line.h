@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sookim <sookim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/07 15:28:15 by sookim            #+#    #+#             */
-/*   Updated: 2020/07/07 16:45:52 by sookim           ###   ########.fr       */
+/*   Created: 2020/07/13 11:38:24 by sookim            #+#    #+#             */
+/*   Updated: 2020/07/13 11:38:27 by sookim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # endif
 
 int				get_next_line(int fd, char **line);
-
 size_t			ft_strlen(const char *s);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);

@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sookim <sookim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/07 15:31:47 by sookim            #+#    #+#             */
-/*   Updated: 2020/07/07 17:33:15 by sookim           ###   ########.fr       */
+/*   Created: 2020/07/13 11:38:53 by sookim            #+#    #+#             */
+/*   Updated: 2020/07/13 11:38:54 by sookim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int					ft_new_line_check(char *temp_buf)
 {
@@ -26,21 +26,21 @@ int					ft_new_line_check(char *temp_buf)
 	return (-1);
 }
 
-int					ft_line_split(char **temp_buf, char **line, int new_line_idx)
+int					ft_line_split(char **temp_buf, char **line, int idx)
 {
 	char			*new_temp_buf;
 	int				len;
 
-	(*temp_buf)[new_line_idx] = '\0';
+	(*temp_buf)[idx] = '\0';
 	*line = ft_strdup(*temp_buf);
-	len = ft_strlen(*temp_buf + new_line_idx + 1);
+	len = ft_strlen(*temp_buf + idx + 1);
 	if (len == 0)
 	{
 		free(*temp_buf);
 		*temp_buf = 0;
 		return (1);
 	}
-	new_temp_buf = ft_strdup(*temp_buf + new_line_idx + 1);
+	new_temp_buf = ft_strdup(*temp_buf + idx + 1);
 	free(*temp_buf);
 	*temp_buf = new_temp_buf;
 	return (1);
